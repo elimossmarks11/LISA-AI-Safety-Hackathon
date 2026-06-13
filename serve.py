@@ -6,10 +6,6 @@ of AKN bills is parsed and scored once at startup; the flagged shortlist is held
 state (a single shared instance) and ranked by total keyword points, highest first.
 Restart to re-scan after refreshing the cache with fetch_bills.py.
 
-NOTE — new dependencies: this module takes on third-party libraries (``fastapi``,
-``uvicorn``); the standard library cannot generate the Swagger schema. Install with
-``pip install fastapi uvicorn``.
-
 Run:  python serve.py        (or)   uvicorn serve:app --reload
 """
 
