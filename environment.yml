@@ -16,3 +16,5 @@ dependencies:
       # conda-forge, so installed via pip.
       - curl_cffi>=0.7
       - click
+      - fastapi
+      - uvicorn
