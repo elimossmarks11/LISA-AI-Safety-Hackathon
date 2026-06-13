@@ -1,17 +1,10 @@
-"""Smoke test: which cached AKN bills carry s.216A-reachable provisions?
+"""Flag bills: which cached AKN bills carry s.216A-reachable provisions?
 
-NOT production code. This is the offence-creation + Ofcom-nexus pattern smoke test that
-the schema-design session teed up: confirm the high-precision *machine* signals fire on
-real AKN, stay quiet on a non-carrier bill, and emit a triage-ranked shortlist of
-CandidateProvisions straight into the models.py schema.
-
-It computes ONLY the machine-detected signals — offence creation, Ofcom/OSA nexus,
-carrier family — and the derived triage_score. The three analytical filters
-(facilitation_fit / individual_uk_harm / prevalence + severity) are left unset for human
-review, per the project's epistemics. They are not fake-automated here.
+It computes ONLY the machine-detected signals — offence creation, and whether the offence
+could be affected by AI. 
 
 Run:
-    python s216_smoke_test.py data/raw_xml
+    python flag_bills.py data/raw_xml
 """
 
 from __future__ import annotations
