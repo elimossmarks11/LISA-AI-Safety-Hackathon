@@ -1,0 +1,17 @@
+name: tracker
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11        # matches the env the notebooks were written against (3.11.x)
+  - requests           # Bills API + Publications calls (the API host is not gated)
+  - ruff               # formatting + linting for the .py modules
+  - jupyterlab         # run the exploration notebooks
+  - ipykernel          # notebook kernel; also lets VS Code use this env
+  - pip
+  - pip:
+      # Chrome-impersonated fetch to clear the Cloudflare JS challenge on the document
+      # host (bills.parliament.uk); plain requests cannot pass it. Not reliably on
+      # conda-forge, so installed via pip.
+      - curl_cffi>=0.7
